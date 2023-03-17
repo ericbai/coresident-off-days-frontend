@@ -1,0 +1,9 @@
+{{page-title "Oops..."}}
+
+<Callout @isError={{true}} @title="Something went wrong!">
+  <ul>
+    {{#each @model.errors as |error|}}
+      <li>{{error.detail}}</li>
+    {{/each}}
+  </ul>
+</Callout>

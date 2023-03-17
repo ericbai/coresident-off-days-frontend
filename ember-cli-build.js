@@ -4,7 +4,14 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
-    // Add options here
+    // see https://github.com/adopted-ember-addons/ember-cli-sass
+    sassOptions: {
+      includePaths: ['node_modules/scut/dist'],
+    },
+    // see https://github.com/mainmatter/ember-simple-auth/blob/master/guides/upgrade-to-v4.md
+    'ember-simple-auth': {
+      useSessionSetupMethod: true,
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -19,6 +26,9 @@ module.exports = function (defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+
+  app.import('node_modules/normalize.css/normalize.css');
+  app.import('node_modules/air-datepicker/air-datepicker.css');
 
   return app.toTree();
 };

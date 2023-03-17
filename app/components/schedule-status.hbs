@@ -1,0 +1,25 @@
+<div class="schedule-status" ...attributes>
+  <ScheduleStatus::Section>
+    Showing day
+    {{@scheduleStatus.dayNumber}}
+    of block
+    {{@scheduleStatus.blockName}}
+  </ScheduleStatus::Section>
+  <ScheduleStatus::Section
+    @title="Off"
+    @shouldShow={{if @scheduleStatus.off true false}}
+  >
+    {{#each @scheduleStatus.off as |resident|}}
+      <Resident @name={{resident.name}} @assignment={{resident.assignment}} />
+    {{/each}}
+  </ScheduleStatus::Section>
+  <ScheduleStatus::Section
+    @title="Maybe off"
+    @shouldShow={{if @scheduleStatus.maybeOff true false}}
+  >
+    {{#each @scheduleStatus.maybeOff as |resident|}}
+      <Resident @name={{resident.name}} @assignment={{resident.assignment}} />
+    {{/each}}
+  </ScheduleStatus::Section>
+  {{yield}}
+</div>

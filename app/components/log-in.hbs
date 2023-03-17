@@ -1,0 +1,18 @@
+<form class="login" {{on "submit" this.onSubmit}} ...attributes>
+  {{#let (unique-id) as |itemId|}}
+    <label for={{itemId}}>Password</label>
+    <input
+      id={{itemId}}
+      placeholder="Enter password"
+      value={{this.pin}}
+      {{on "input" this.updatePin}}
+      {{autofocus}}
+    />
+  {{/let}}
+  {{#if this.pin}}
+    <button type="submit">Log in</button>
+  {{/if}}
+  {{#if this.errorMessage}}
+    <div class="login__error">{{this.errorMessage}}</div>
+  {{/if}}
+</form>

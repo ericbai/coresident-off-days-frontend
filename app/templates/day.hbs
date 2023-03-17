@@ -1,0 +1,16 @@
+{{#if this.dateDisplay.isInitialized}}
+  <DateSelector
+    @currentDate={{this.dateDisplay.currentDate}}
+    @minDate={{this.dateDisplay.minDate}}
+    @maxDate={{this.dateDisplay.maxDate}}
+    @onDateChange={{this.onDateChange}}
+  />
+{{/if}}
+
+{{outlet}}
+
+<ul>
+  <li><a rel="noopener" href="javascript:;" {{on "click" this.logout}}>Log out</a></li>
+  <li><a rel="noopener" href="mailto:feedback@ismycoresidentoff.com">Send
+      feedback</a></li>
+</ul>

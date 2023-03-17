@@ -1,0 +1,37 @@
+<div class="date-selector" ...attributes>
+  <button
+    type="button"
+    class="date-selector__button"
+    disabled={{this.disableBack}}
+    {{on "click" (fn @onDateChange this.dayPrior)}}
+  >
+    ←
+  </button>
+  <div class="date-selector__picker">
+    {{#if (and @currentDate @minDate @maxDate)}}
+      <DatePicker
+        @displayDateFormat={{this.pickerDateFormat}}
+        @date={{@currentDate}}
+        @minDate={{@minDate}}
+        @maxDate={{@maxDate}}
+        @onChange={{@onDateChange}}
+      />
+    {{/if}}
+  </div>
+  <button
+    type="button"
+    class="date-selector__button"
+    disabled={{this.disableForward}}
+    {{on "click" (fn @onDateChange this.dayAfter)}}
+  >
+    →
+  </button>
+  <button
+    type="button"
+    class="date-selector__button"
+    disabled={{this.disableToday}}
+    {{on "click" (fn @onDateChange this.today)}}
+  >
+    Today
+  </button>
+</div>

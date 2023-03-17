@@ -1,0 +1,76 @@
+// Base
+@import "scut";
+@import "vars";
+
+// Overrides
+@import "override/air-datepicker";
+
+// Components
+// TODO reorganize
+// TODO animations to add polish after base styling
+// TODO set global font size, vertical scroll helper, import fonts
+
+.app {
+  &__logo {
+  }
+  &__content {
+  }
+}
+
+.content {
+  &__top {
+  }
+  &__main {
+  }
+  &__bottom {
+  }
+}
+
+.header {
+  &--title {
+  }
+}
+
+.button {
+}
+
+.schedule-status {
+  border: 1px solid gray;
+
+  &__section {
+    &__title {
+    }
+  }
+}
+
+.resident {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 1rem;
+
+  &__name {
+  }
+  &__assignment {
+  }
+}
+
+.callout {
+  &--error {
+  }
+  &__plain {
+  }
+  &__title {
+  }
+}
+
+.date-selector {
+  &__button {
+  }
+  &__picker {
+  }
+}
+
+.login {
+  &__error {
+  }
+}

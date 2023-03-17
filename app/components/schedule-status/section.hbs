@@ -1,0 +1,10 @@
+{{#if this.shouldShow}}
+  <div class="schedule-status__section">
+    {{#if @title}}
+      <div class="schedule-status__section__title">
+        {{@title}}
+      </div>
+    {{/if}}
+    {{yield}}
+  </div>
+{{/if}}

@@ -1,7 +1,16 @@
-{{page-title "CoresidentOffDaysFrontend"}}
+{{page-title "Is my coresident off?"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="app">
+  <div class="app__logo">
+    <h1 class="header header--title">
+      Is my coresident off?
+    </h1>
+  </div>
+  <div class="app__content content">
+    <div class="content__top"></div>
+    <div class="content__main">
+      {{outlet}}
+    </div>
+    <div class="content__bottom"></div>
+  </div>
+</div>

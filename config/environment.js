@@ -1,5 +1,8 @@
 'use strict';
 
+// TODO selectively fill out tests and deleted unused ones
+// TODO delete unnecessary files
+
 module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'coresident-off-days-frontend',
@@ -8,15 +11,13 @@ module.exports = function (environment) {
     locationType: 'history',
     EmberENV: {
       EXTEND_PROTOTYPES: false,
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
-      },
     },
-
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+    APP: {},
+    ENV: {
+      API_ROOT: 'https://iafxygsbc1.execute-api.us-east-1.amazonaws.com',
+      MODEL_SCHEDULE_STATUS: 'schedule-status',
+      FORMAT_DATE: 'YYYY-MM-DD',
+      SLUG_TODAY: 'today',
     },
   };
 
