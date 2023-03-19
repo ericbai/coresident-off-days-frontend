@@ -1,4 +1,5 @@
 import Model, { attr } from '@ember-data/model';
+import dayjs from 'dayjs';
 
 export default class ScheduleStatusModel extends Model {
   @attr('string') fetchedDate;
@@ -11,4 +12,8 @@ export default class ScheduleStatusModel extends Model {
   // Arrays of objects with keys `name` and `assignment`
   @attr off;
   @attr maybeOff;
+
+  get readableDate() {
+    return dayjs(this.fetchedDate).format('ddd, MMM D');
+  }
 }

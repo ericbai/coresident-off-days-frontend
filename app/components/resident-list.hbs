@@ -1,0 +1,28 @@
+<div class="resident-list" ...attributes>
+  <div class="resident-list__title">
+    <h2 class="resident-list__title__item text text--header">{{@title}}</h2>
+    {{#if @residents.length}}
+      <span
+        class="resident-list__title__item badge"
+      >{{@residents.length}}</span>
+    {{/if}}
+  </div>
+  <ul class="resident-list__list">
+    {{#each @residents as |resident|}}
+      <li class="resident-list__list__resident">
+        <span class="text">
+          {{resident.name}}
+        </span>
+        <span class="badge badge--small">
+          {{resident.assignment}}
+        </span>
+      </li>
+    {{else}}
+      <li>
+        <Callout @centerContent={{true}}>
+          {{@emptyMessage}}
+        </Callout>
+      </li>
+    {{/each}}
+  </ul>
+</div>

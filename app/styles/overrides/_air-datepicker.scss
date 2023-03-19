@@ -1,0 +1,11 @@
+// Vendor: node_modules/air-datepicker/air-datepicker.css
+
+.air-datepicker-button,
+.air-datepicker-cell.-current-,
+.air-datepicker-body--day-name {
+  color: $color-blue-dark-1;
+}
+
+.air-datepicker-cell.-selected- {
+  background: $color-blue-dark-1;
+}

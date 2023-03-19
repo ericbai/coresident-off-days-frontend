@@ -1,8 +1,5 @@
 'use strict';
 
-// TODO selectively fill out tests and deleted unused ones
-// TODO delete unnecessary files
-
 module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'coresident-off-days-frontend',

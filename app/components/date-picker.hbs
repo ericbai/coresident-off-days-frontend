@@ -1,8 +1,15 @@
-<input
-  id={{unique-id}}
-  type="text"
-  {{did-insert this.initializePicker}}
-  {{did-update this.updatePickerDate this.selectedDate}}
-  {{will-destroy this.cleanupPicker}}
-  ...attributes
-/>
+<div class="form date-picker" ...attributes>
+  {{#let (unique-id) as |thisId|}}
+    <label for={{thisId}} class="form-label form-label--hidden">
+      Select a date to display schedules for
+    </label>
+    <input
+      id={{thisId}}
+      type="text"
+      class="date-picker__input input input--invisible"
+      {{did-insert this.initializePicker}}
+      {{did-update this.updatePickerDate this.selectedDate}}
+      {{will-destroy this.cleanupPicker}}
+    />
+  {{/let}}
+</div>

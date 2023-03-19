@@ -1,37 +1,41 @@
-<div class="date-selector" ...attributes>
-  <button
-    type="button"
-    class="date-selector__button"
-    disabled={{this.disableBack}}
-    {{on "click" (fn @onDateChange this.dayPrior)}}
-  >
-    ←
-  </button>
-  <div class="date-selector__picker">
-    {{#if (and @currentDate @minDate @maxDate)}}
-      <DatePicker
-        @displayDateFormat={{this.pickerDateFormat}}
-        @date={{@currentDate}}
-        @minDate={{@minDate}}
-        @maxDate={{@maxDate}}
-        @onChange={{@onDateChange}}
-      />
-    {{/if}}
+<div class="button-container" ...attributes>
+  <div class="button-container__group button-container__group--expand">
+    <button
+      type="button"
+      class="button-container__item button button--invisible"
+      disabled={{this.disableBack}}
+      {{on "click" (fn @onDateChange this.dayPrior)}}
+    >
+      ←
+    </button>
+    <div class="button-container__item button-container__item--expand">
+      {{#if (and @currentDate @minDate @maxDate)}}
+        <DatePicker
+          @displayDateFormat={{this.pickerDateFormat}}
+          @date={{@currentDate}}
+          @minDate={{@minDate}}
+          @maxDate={{@maxDate}}
+          @onChange={{@onDateChange}}
+        />
+      {{/if}}
+    </div>
+    <button
+      type="button"
+      class="button-container__item button button--invisible"
+      disabled={{this.disableForward}}
+      {{on "click" (fn @onDateChange this.dayAfter)}}
+    >
+      →
+    </button>
   </div>
-  <button
-    type="button"
-    class="date-selector__button"
-    disabled={{this.disableForward}}
-    {{on "click" (fn @onDateChange this.dayAfter)}}
-  >
-    →
-  </button>
-  <button
-    type="button"
-    class="date-selector__button"
-    disabled={{this.disableToday}}
-    {{on "click" (fn @onDateChange this.today)}}
-  >
-    Today
-  </button>
+  <div class="button-container__group {{if @todayClass @todayClass}}">
+    <button
+      type="button"
+      class="button-container__item button button--invisible"
+      disabled={{this.disableToday}}
+      {{on "click" (fn @onDateChange this.today)}}
+    >
+      Today
+    </button>
+  </div>
 </div>

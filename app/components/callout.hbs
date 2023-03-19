@@ -1,11 +1,16 @@
 <div
-  class="callout" ...attributes
+  class="callout
+    {{if @error 'callout--error'}}
+    {{if @centerContainer 'callout--center-container'}}
+    {{if @centerContent 'callout--center-content'}}"
+  ...attributes
 >
   {{#if @title}}
-    <div class="callout__title">
+    <div class="callout__title text text--header">
       {{@title}}
     </div>
   {{/if}}
-
-  {{yield}}
+  <div class="text">
+    {{yield}}
+  </div>
 </div>

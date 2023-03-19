@@ -1,0 +1,131 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-yellow-light-1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  &__logo {
+    padding: 20vh $size-gutter ($baseunit * 3);
+    text-align: center;
+
+    @media (min-width: $media-width-layout-mobile) {
+      padding-top: $baseunit * 3;
+    }
+  }
+  &__logo-container,
+  &__content {
+    min-height: 0;
+  }
+  &__content {
+    @media (min-width: $media-width-layout-mobile) and (max-height: $media-height-tablet) {
+      padding: $baseunit 0;
+    }
+  }
+}
+
+// Sizing
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media (min-width: $media-width-layout-mobile) {
+    &__top,
+    &__bottom {
+      &:not(:empty) {
+        margin: 0 auto;
+        width: $width-content-small;
+        max-width: $max-width-content-small;
+      }
+    }
+    &__container {
+      margin: 0 auto;
+      width: $width-content-large;
+      max-width: $max-width-content-large;
+    }
+  }
+}
+
+// Styling
+.content {
+  &__top {
+    &:not(:empty) {
+      border-bottom: 1px solid $color-gray-dark-2;
+      background-color: $color-gray-light-1;
+
+      @media (min-width: $media-width-layout-mobile) {
+        border: 1px solid $color-gray-dark-1;
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+      }
+    }
+    &__item {
+      &--message {
+        padding: ($baseunit * 0.5) $size-gutter;
+        text-align: center;
+      }
+      & + & {
+        position: relative;
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: $size-gutter;
+          border-top: 1px solid $color-gray-dark-1;
+          width: calc(100% - #{$size-gutter * 2});
+          content: "";
+        }
+      }
+    }
+  }
+  // The layout and spacing of the main area
+  &__main {
+    @include scroll-vertical;
+
+    flex-grow: 1;
+    min-height: 0; // allow scrolling in vertical flexbox
+
+    @media (min-width: $media-width-layout-mobile) and (min-height: $media-height-tablet) {
+      flex-basis: auto;
+      max-height: $max-height-content;
+    }
+  }
+  // The styling of the content container area
+  &__container {
+    @include scroll-vertical;
+
+    position: relative;
+    background: $color-white;
+
+    @media (min-width: $media-width-layout-mobile) {
+      border: 1px solid $color-gray-dark-2;
+      border-radius: $border-radius;
+    }
+  }
+  &__bottom {
+    &:not(:empty) {
+      border-top: 1px solid $color-gray-dark-2;
+      background-color: $color-gray-light-1;
+
+      @media (min-width: $media-width-layout-mobile) {
+        border: 1px solid $color-gray-dark-1;
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+    }
+  }
+}
+
+.toggle-mobile-layout {
+  @include only-mobile-portrait {
+    display: none;
+  }
+}
+
+.show-logo-desktop {
+  @include only-mobile-portrait-and-landscape {
+    display: none;
+  }
+}

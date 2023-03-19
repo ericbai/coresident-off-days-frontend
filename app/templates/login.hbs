@@ -1,5 +1,7 @@
 {{page-title "Login"}}
 
-<LogIn @onSubmit={{this.login}} @onSuccess={{this.onSuccess}} />
+<Wormhole @name="logo">
+  <Logo />
+</Wormhole>
 
-{{outlet}}
+<LogIn @onSubmit={{this.login}} @onSuccess={{this.onSuccess}} />

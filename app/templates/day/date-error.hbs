@@ -1,9 +1,14 @@
 {{page-title "Oops..."}}
 
-<Callout @isError={{true}} @title="Something went wrong!">
-  <ul>
+<Callout @centerContainer={{true}} @centerContent={{true}} @title="Oops... 🥲">
+  <ul class="list list--invisible">
     {{#each @model.errors as |error|}}
       <li>{{error.detail}}</li>
     {{/each}}
+    <li>Please let us know at
+      <a
+        class="link"
+        href="mailto:feedback@ismycoresidentoff.com"
+      >feedback@ismycoresidentoff.com</a></li>
   </ul>
 </Callout>

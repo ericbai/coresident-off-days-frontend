@@ -1,16 +1,12 @@
 {{page-title "Is my coresident off?"}}
 
-<div class="app">
-  <div class="app__logo">
-    <h1 class="header header--title">
-      Is my coresident off?
-    </h1>
-  </div>
+<div class="app typography-parent">
+  <div class="app__logo-container" {{register-wormhole "logo"}}></div>
   <div class="app__content content">
-    <div class="content__top"></div>
+    <div class="content__top" {{register-wormhole "top"}}></div>
     <div class="content__main">
       {{outlet}}
     </div>
-    <div class="content__bottom"></div>
+    <div class="content__bottom" {{register-wormhole "bottom"}}></div>
   </div>
 </div>

@@ -1,3 +1,23 @@
-{{page-title this.readableDate}}
+{{page-title @model.readableDate}}
 
-<ScheduleStatus @scheduleStatus={{@model}} />
+<Wormhole @name="top" @append={{true}}>
+  <div class="content__top__item content__top__item--message text text--small">
+    Showing day
+    {{@model.dayNumber}}
+    of block
+    {{@model.blockName}}
+  </div>
+</Wormhole>
+
+<ResidentList
+  class="resident-categories__category"
+  @title="Off"
+  @residents={{@model.off}}
+  @emptyMessage="No one is off today! 😩"
+/>
+<ResidentList
+  class="resident-categories__category"
+  @title="Maybe off"
+  @residents={{@model.maybeOff}}
+  @emptyMessage="No one might be off today! 😩"
+/>

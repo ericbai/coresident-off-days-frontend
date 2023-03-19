@@ -1,14 +1,31 @@
 // Colors
 $color-white: #ffffff;
 $color-yellow-light-1: #fffdf6;
+
 $color-gray-light-1: #f6f6f6;
 $color-gray-dark-1: #d6d5d2;
 $color-gray-dark-2: #1e2b32;
+
 $color-blue-dark-1: #325466;
+
+$color-red-light-2: #ffe8e8;
+$color-red-light-1: #e89797;
+$color-red-dark-1: #9c1212;
 
 // Measurements
 $baseunit: 1rem;
 $border-radius: 5px;
+$size-gutter: $baseunit;
+
+$height-control: $baseunit * 2.75;
+$max-height-content: 60vh;
+
+$width-content-small: 60vw;
+$width-content-large: 80vw;
+$max-width-content-small: $baseunit * 40;
+$max-width-content-large: $baseunit * 80;
+
+$font-size-small: $baseunit * 0.8;
 
 // Breakpoints
 $media-width-mobile-landscape-small: 568px; // iPhone 5
@@ -18,3 +35,8 @@ $media-width-mobile-landscape-large: 812px; // iPhone X and Pixel 2 XL
 $media-width-laptop: 1024px; // 1024x768
 $media-width-desktop: 1280px; // 1280x800
 $media-width-desktop-large: 1440px; // 1440x900
+
+// actual divider point between mobile and desktop layouts
+$media-width-layout-mobile: $media-width-mobile-landscape-large;
+
+$media-height-tablet: 500px; // excludes mobile landscape

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Rufina&display=swap");
+
+.typography-parent {
+  font-size: 16px;
+  line-height: normal;
+  font-family: "Inter", sans-serif;
+}
+
+.text {
+  margin: 0;
+  color: $color-gray-dark-2;
+
+  &--header {
+    font-size: $baseunit * 1.5625;
+    font-family: "Rufina", serif;
+
+    @media (min-width: $media-width-layout-mobile) {
+      font-size: $baseunit * 1.5;
+    }
+  }
+  &--small {
+    font-size: $font-size-small;
+  }
+}

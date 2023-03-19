@@ -1,76 +1,17 @@
-// Base
+// Order matters here
 @import "scut";
 @import "vars";
+@import "mixins";
 
-// Overrides
-@import "override/air-datepicker";
+// Alphabetic order, order does not matter
+@import "elements";
+@import "layout";
+@import "reset";
+@import "typography";
 
-// Components
-// TODO reorganize
-// TODO animations to add polish after base styling
-// TODO set global font size, vertical scroll helper, import fonts
+@import "overrides/air-datepicker";
 
-.app {
-  &__logo {
-  }
-  &__content {
-  }
-}
-
-.content {
-  &__top {
-  }
-  &__main {
-  }
-  &__bottom {
-  }
-}
-
-.header {
-  &--title {
-  }
-}
-
-.button {
-}
-
-.schedule-status {
-  border: 1px solid gray;
-
-  &__section {
-    &__title {
-    }
-  }
-}
-
-.resident {
-  display: list-item;
-  list-style-type: disc;
-  margin-left: 1rem;
-
-  &__name {
-  }
-  &__assignment {
-  }
-}
-
-.callout {
-  &--error {
-  }
-  &__plain {
-  }
-  &__title {
-  }
-}
-
-.date-selector {
-  &__button {
-  }
-  &__picker {
-  }
-}
-
-.login {
-  &__error {
-  }
-}
+@import "components/callout";
+@import "components/date-picker";
+@import "components/log-in";
+@import "components/resident-list";

@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'coresident-off-days-frontend/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 
-module('Integration | Component | resident', function (hooks) {
+module('Integration | Component | wormhole', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Resident />`);
+    await render(hbs`<Wormhole />`);
 
     assert.dom(this.element).hasText('');
 
     // Template block usage:
     await render(hbs`
-      <Resident>
+      <Wormhole>
         template block text
-      </Resident>
+      </Wormhole>
     `);
 
     assert.dom(this.element).hasText('template block text');

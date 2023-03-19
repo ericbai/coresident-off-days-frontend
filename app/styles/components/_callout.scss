@@ -1,0 +1,19 @@
+.callout {
+  border-radius: $border-radius;
+  padding: ($baseunit * 0.5) $baseunit;
+
+  &--error {
+    border: 1px solid $color-red-light-1;
+    background-color: $color-red-light-2;
+    color: $color-red-dark-1;
+  }
+  &--center-container {
+    @include scut-center-transform;
+  }
+  &--center-content {
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: $baseunit * 1.5;
+  }
+}

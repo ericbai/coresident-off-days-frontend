@@ -1,0 +1,11 @@
+{{#if this.destinationElement}}
+  {{#if @append}}
+    {{#in-element this.destinationElement insertBefore=null}}
+      {{yield}}
+    {{/in-element}}
+  {{else}}
+    {{#in-element this.destinationElement}}
+      {{yield}}
+    {{/in-element}}
+  {{/if}}
+{{/if}}

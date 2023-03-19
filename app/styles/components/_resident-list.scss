@@ -1,0 +1,68 @@
+.resident-categories {
+  height: 100%;
+  min-height: 100%;
+
+  @media (min-width: $media-width-layout-mobile) {
+    display: flex;
+  }
+
+  &__category {
+    width: 100%;
+
+    & + & {
+      border-top: 1px solid $color-blue-dark-1;
+
+      @media (min-width: $media-width-layout-mobile) {
+        border-top: 0;
+        border-left: 1px solid $color-blue-dark-1;
+      }
+    }
+  }
+}
+
+.resident-list {
+  &__title {
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    gap: $baseunit;
+    background-color: $color-yellow-light-1;
+    padding: ($baseunit * 1.5) $size-gutter $baseunit;
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: $size-gutter;
+      border-bottom: 1px solid $color-gray-dark-1;
+      width: calc(100% - #{$size-gutter * 2});
+      content: "";
+    }
+    // to ensure neighboring lists have titles of the same height with or without badge
+    &__title {
+      padding: $baseunit * 0.15;
+    }
+  }
+  &__list {
+    @include scut-list-unstyled;
+    @include scroll-vertical;
+
+    padding: $baseunit $size-gutter ($baseunit * 1.5);
+
+    &__resident:not(:last-child) {
+      display: flex;
+      align-items: center;
+      gap: $baseunit * 0.75;
+      margin-bottom: $baseunit * 0.75;
+    }
+  }
+
+  @media (min-width: $media-width-layout-mobile) {
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+      min-height: 0;
+    }
+  }
+}

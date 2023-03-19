@@ -1,16 +1,40 @@
+<Wormhole @name="logo">
+  <Logo class="show-logo-desktop" />
+</Wormhole>
+
 {{#if this.dateDisplay.isInitialized}}
-  <DateSelector
-    @currentDate={{this.dateDisplay.currentDate}}
-    @minDate={{this.dateDisplay.minDate}}
-    @maxDate={{this.dateDisplay.maxDate}}
-    @onDateChange={{this.onDateChange}}
-  />
+  <Wormhole @name="top" @append={{true}}>
+    <DateSelector
+      class="content__top__item"
+      @todayClass="toggle-mobile-layout"
+      @currentDate={{this.dateDisplay.currentDate}}
+      @minDate={{this.dateDisplay.minDate}}
+      @maxDate={{this.dateDisplay.maxDate}}
+      @onDateChange={{this.onDateChange}}
+    />
+  </Wormhole>
 {{/if}}
 
-{{outlet}}
+<div class="content__container resident-categories">
+  {{outlet}}
+</div>
 
-<ul>
-  <li><a rel="noopener" href="javascript:;" {{on "click" this.logout}}>Log out</a></li>
-  <li><a rel="noopener" href="mailto:feedback@ismycoresidentoff.com">Send
-      feedback</a></li>
-</ul>
+<Wormhole @name="bottom">
+  <div class="button-container">
+    <div class="button-container__group button-container__group--expand">
+      <a
+        class="button-container__item button-container__item--expand button button--invisible"
+        rel="noopener"
+        href="mailto:feedback@ismycoresidentoff.com"
+      >Send feedback</a>
+    </div>
+    <div class="button-container__group">
+      <a
+        class="button-container__item button button--invisible"
+        rel="noopener"
+        href="javascript:;"
+        {{on "click" this.logout}}
+      >Log out</a>
+    </div>
+  </div>
+</Wormhole>

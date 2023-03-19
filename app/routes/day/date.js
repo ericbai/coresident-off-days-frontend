@@ -27,7 +27,6 @@ export default class DayDateRoute extends Route {
 
   @action
   error(error) {
-    // TODO disable to style error state?
     // if error on first initialization, then transition to today
     // only display error state if transitioning to invalid state after successful initial load
     if (!this.dateDisplay.isInitialized) {

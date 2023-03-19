@@ -1,0 +1,24 @@
+// see https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation
+// [1]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
+// [2]: Make it smooth scrolling on iOS devices
+// [3]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
+@mixin scroll-vertical() {
+  -webkit-overflow-scrolling: touch; /* [2] */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* [3] */
+  overflow-y: auto; /* [1] */
+}
+
+// CSS for only mobile portrait, does NOT restrict based on mobile landscape
+@mixin only-mobile-portrait() {
+  @media (max-width: $media-width-layout-mobile) {
+    @content;
+  }
+}
+
+// CSS for only mobile portrait and mobile landscape
+@mixin only-mobile-portrait-and-landscape() {
+  @media (max-width: $media-width-layout-mobile),
+    (max-height: $media-height-tablet) {
+    @content;
+  }
+}

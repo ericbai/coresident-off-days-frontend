@@ -1,0 +1,10 @@
+.log-in {
+  border: 1px solid $color-gray-dark-2;
+  border-width: 1px 0;
+  padding: ($baseunit * 3) $size-gutter;
+
+  @media (min-width: $media-width-layout-mobile) {
+    border-width: 1px;
+    width: $width-content-small;
+  }
+}
