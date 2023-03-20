@@ -18,6 +18,9 @@
   &__content {
     min-height: 0;
   }
+  &__logo-container {
+    flex-shrink: 0;
+  }
   &__content {
     @media (min-width: $media-width-layout-mobile) and (max-height: $media-height-tablet) {
       padding: $baseunit 0;

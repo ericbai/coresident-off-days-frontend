@@ -29,6 +29,7 @@
     gap: $baseunit;
     background-color: $color-yellow-light-1;
     padding: ($baseunit * 1.5) $size-gutter $baseunit;
+    z-index: $z-index-front-1;
 
     &:after {
       position: absolute;

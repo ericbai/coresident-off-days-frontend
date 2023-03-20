@@ -3,6 +3,7 @@
   &:hover,
   &:visited,
   &:active {
+    cursor: pointer;
     color: $color-blue-dark-1;
     line-height: normal;
     text-decoration: underline;
@@ -128,6 +129,7 @@
   &:hover,
   &:focus,
   &:active {
+    cursor: pointer;
     border: 0;
     border-radius: $border-radius;
     background-color: $color-blue-dark-1;
@@ -138,6 +140,7 @@
   }
   &:disabled {
     opacity: 0.5;
+    cursor: not-allowed;
   }
 
   &--invisible {

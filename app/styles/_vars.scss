@@ -25,7 +25,11 @@ $width-content-large: 80vw;
 $max-width-content-small: $baseunit * 40;
 $max-width-content-large: $baseunit * 80;
 
+// Typography
 $font-size-small: $baseunit * 0.8;
+
+// Stacking order
+$z-index-front-1: 5;
 
 // Breakpoints
 $media-width-mobile-landscape-small: 568px; // iPhone 5
@@ -36,7 +40,6 @@ $media-width-laptop: 1024px; // 1024x768
 $media-width-desktop: 1280px; // 1280x800
 $media-width-desktop-large: 1440px; // 1440x900
 
-// actual divider point between mobile and desktop layouts
-$media-width-layout-mobile: $media-width-mobile-landscape-large;
+$media-width-layout-mobile: $media-width-mobile-landscape-large; // separates mobile vs desktop layout
 
 $media-height-tablet: 500px; // excludes mobile landscape
