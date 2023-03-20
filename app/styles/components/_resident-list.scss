@@ -27,9 +27,9 @@
     top: 0;
     align-items: center;
     gap: $baseunit;
+    z-index: $z-index-front-1;
     background-color: $color-yellow-light-1;
     padding: ($baseunit * 1.5) $size-gutter $baseunit;
-    z-index: $z-index-front-1;
 
     &:after {
       position: absolute;
@@ -39,9 +39,13 @@
       width: calc(100% - #{$size-gutter * 2});
       content: "";
     }
+
     // to ensure neighboring lists have titles of the same height with or without badge
-    &__title {
-      padding: $baseunit * 0.15;
+    &__item {
+      padding: ($baseunit * 0.15) 0;
+    }
+    @media (min-width: $media-width-layout-mobile) {
+      background-color: transparent;
     }
   }
   &__list {
