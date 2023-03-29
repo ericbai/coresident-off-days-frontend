@@ -44,7 +44,11 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-- To build and then sync with project S3 bucket: `npm run build --profile=<AWS profile>`
+- Build production assets: `ember build --prod`
+- Sync with S3 bucket: `aws s3 sync dist s3://coresident-off-days-frontend --profile ember-deployer`
+- Create CloudFront invalidation to ensure changes get propagated: `aws cloudfront create-invalidation --distribution-id E1L7TY9TYPLUC3 --paths /index.html --profile ember-deployer`
+
+To view AWS CLI profile, find the corresponding key in `~/.aws/credentials`
 
 ## Further Reading / Useful Links
 

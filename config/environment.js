@@ -16,6 +16,22 @@ module.exports = function (environment) {
       FORMAT_DATE: 'YYYY-MM-DD',
       SLUG_TODAY: 'today',
     },
+    // See https://github.com/adopted-ember-addons/ember-metrics
+    // Don't need to configure GA4 in the ApplicationRoute because by default GA4 automatically
+    // tracks page views when the history locations changes.
+    metricsAdapters: [
+      {
+        name: 'GoogleAnalyticsFour',
+        environments: ['production'],
+        config: {
+          id: 'G-HSRW58TPKL',
+          options: {
+            anonymize_ip: true,
+            debug_mode: environment === 'development',
+          },
+        },
+      },
+    ],
   };
 
   if (environment === 'development') {
