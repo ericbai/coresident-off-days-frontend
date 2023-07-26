@@ -13,6 +13,13 @@
   }
 }
 
+// the bounding box for the emojis are actually smaller than the emoji itself so it gets cut off if
+// the parent has `overflow: hidden;`
+.emoji {
+  display: inline-block;
+  min-width: $baseunit * 1.5;
+}
+
 .badge {
   display: inline-block;
   border: 1px solid $color-gray-dark-1;
@@ -20,6 +27,7 @@
   padding: ($baseunit * 0.25) ($baseunit * 0.625);
   color: $color-blue-dark-1;
   text-align: center;
+  white-space: nowrap;
 
   &--small {
     padding: ($baseunit * 0.25) ($baseunit * 0.375);

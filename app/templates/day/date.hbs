@@ -2,10 +2,14 @@
 
 <Wormhole @name="top" @append={{true}}>
   <div class="content__top__item content__top__item--message text text--small">
-    Showing day
-    {{@model.dayNumber}}
+    Intern: day
+    {{@model.internBlockInfo.dayNumber}}
     of block
-    {{@model.blockName}}
+    {{@model.internBlockInfo.blockName}}.
+    Resident: day
+    {{@model.residentBlockInfo.dayNumber}}
+    of block
+    {{@model.residentBlockInfo.blockName}}.
   </div>
 </Wormhole>
 
@@ -20,4 +24,10 @@
   @title="Maybe off"
   @residents={{@model.maybeOff}}
   @emptyMessage="No one might be off today! 😩"
+/>
+<ResidentList
+  class="resident-categories__category"
+  @title="Likely working"
+  @residents={{@model.likelyNotOff}}
+  @emptyMessage="No one is working today! 🤗"
 />
